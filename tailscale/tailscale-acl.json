@@ -41,7 +41,7 @@
 	// certain criteria to access parts of your system.
 	"postures": {
 		// Require devices running macOS, a stable Tailscale
-		// version and auto update enabled for Tailscale.
+		// version and auto update enabled for Tailscale. (strict)
 		"posture:autoUpdateMac": [
 			"node:os == 'macos'",
 			"node:tsReleaseTrack == 'stable'",
@@ -49,14 +49,14 @@
 		],
 		// Require devices running macOS or Linux
 		// and a stable Tailscale version with
-		// auto update enabled on Tailscale
+		// auto update enabled on Tailscale (medium strict)
 		"posture:autoUpdateMacOrLinux": [
 			"node:os IN ['macos', 'linux']",
 			"node:tsReleaseTrack == 'stable'",
 			"node:tsAutoUpdate",
 		],
-		// Require devices running macOS and a stable
-		// Tailscale version.
+		// Require devices running any primary OS we use
+		// and run a stable Tailscale version (relaxed policy)
 		"posture:primaryStable": [
 			"node:os IN ['macos', 'linux', 'windows', 'ios', 'android', 'freebsd']",
 			"node:tsReleaseTrack == 'stable'",
