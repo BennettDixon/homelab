@@ -21,8 +21,8 @@
 		// Comment this section out if you want to define specific restrictions.
 		{"action": "accept", "src": ["*"], "dst": ["*:*"]},
 
-		// Allow users in "group:example" to access "tag:example", but only from
-		// devices that are running macOS and have enabled Tailscale client auto-updating.
+		// Allow things with "tag:public" to access "tag:public", but only from
+		// devices that are running macOS or Linux and have enabled Tailscale client auto-updating.
 		{
 			"action":     "accept",
 			"src":        ["tag:public"],
