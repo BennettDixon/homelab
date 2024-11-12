@@ -1,4 +1,4 @@
-.PHONY: set-env test-set-env
+.PHONY: set-env test-set-env set-ts-key-public-proxy docker-private-build docker-private-up docker-private-down docker-public-build docker-public-up docker-public-down
 
 # Default help command
 help:
@@ -25,11 +25,17 @@ test-set-env: ## Run tests on set_env_file.sh script
 docker-private-build: ## Build the private docker stack
 	@cd docker-private && docker compose build
 
-docker-private-start: ## Start the private docker stack
+docker-private-up: ## Start the private docker stack
 	@cd docker-private && docker compose up
+
+docker-private-down: ## Stop the private docker stack
+	@cd docker-private && docker compose down
 
 docker-public-build: ## Build the public docker stack
 	@cd docker-public && docker compose build
 
-docker-public-start: ## Start the public docker stack
+docker-public-up: ## Start the public docker stack
 	@cd docker-public && docker compose up
+
+docker-public-down: ## Stop the public docker stack
+	@cd docker-public && docker compose down
