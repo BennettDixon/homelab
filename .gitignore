@@ -1,2 +1,2 @@
 .env
-tailscale/state/*
+docker-public/nginx-public-proxy/tailscale/state/*
