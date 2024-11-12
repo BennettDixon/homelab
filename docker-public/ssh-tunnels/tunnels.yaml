@@ -1,7 +1,7 @@
 tunnels:
   - name: public-proxy
     local_port: 3132
-    remote_port: 80
+    remote_port: 25565
     remote_host: nginx
     ssh_host: linode-proxy
     ssh_port: 22

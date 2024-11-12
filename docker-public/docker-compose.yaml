@@ -32,8 +32,7 @@ services:
       - ts-nginx-public
       - nginx
     network_mode: service:ts-nginx-public
-        #command: ["python", "tunnel_manager.py"]
-    command: ["tail", "-f", "/dev/null"]
+    command: ["python", "tunnel_manager.py"]
 
 networks:
   publicnet:
