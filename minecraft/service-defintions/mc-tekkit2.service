@@ -1,0 +1,11 @@
+[Unit]
+Description=Tekkit2 Minecraft Service
+After=network.target
+
+[Service]
+WorkingDirectory=/home/minecraft/tekkit2
+ExecStart=/usr/bin/java -Xms2867M -Xmx28G -jar minecraft_server.1.12.2.jar
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
