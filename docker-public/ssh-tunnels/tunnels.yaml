@@ -1,6 +1,6 @@
 tunnels:
   - name: public-https-proxy
-    local_port: 8080
+    local_port: 3132
     remote_port: 8080
     remote_host: "nginx"
     ssh_host: linode-proxy

@@ -1,6 +1,9 @@
 echo "Upgrading & updating package lists"
 sudo apt-get update && sudo apt-get upgrade -y
 
+# Install nginx (local test maybe remove this)
+sudo apt-get install -y nginx libnginx-mod-stream
+
 # Install tailscale
 echo "Installing tailscale for ubuntu 24.04"
 curl -fsSL https://pkgs.tailscale.com/stable/ubuntu/noble.noarmor.gpg | sudo tee /usr/share/keyrings/tailscale-archive-keyring.gpg >/dev/null

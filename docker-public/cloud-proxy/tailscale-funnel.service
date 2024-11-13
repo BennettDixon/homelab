@@ -1,0 +1,10 @@
+[Unit]
+Description=Tailscale Funnel Service
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/tailscale funnel 3132
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
