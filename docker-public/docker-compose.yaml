@@ -28,7 +28,7 @@ services:
     depends_on:
       - ts-nginx-public
     volumes: 
-      - ./nginx-public-proxy/nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx-proxy-router/nginx.conf:/etc/nginx/nginx.conf
     restart: unless-stopped
     networks:
       - publicnet

@@ -1,11 +1,4 @@
 tunnels:
-  - name: public-proxy
-    local_port: 25565
-    remote_port: 25565
-    remote_host: "nginx"
-    ssh_host: linode-proxy
-    ssh_port: 22
-    ssh_user: root
   - name: public-https-proxy
     local_port: 8080
     remote_port: 8080
