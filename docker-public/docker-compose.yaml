@@ -16,15 +16,22 @@ services:
       - net_admin
       - sys_module
     restart: unless-stopped
+    networks:
+      - publicnet
 
   nginx:
     image: nginx:latest
     container_name: nginx
+    # Bind local 8888 for testing
+    ports:
+      - 8888:8080
     depends_on:
       - ts-nginx-public
     volumes: 
       - ./nginx-public-proxy/nginx.conf:/etc/nginx/nginx.conf
     restart: unless-stopped
+    networks:
+      - publicnet
 
   ssh-tunnels:
     build: ./ssh-tunnels
@@ -33,6 +40,7 @@ services:
       - nginx
     network_mode: service:ts-nginx-public
     command: ["python", "tunnel_manager.py"]
+
 
 networks:
   publicnet:
